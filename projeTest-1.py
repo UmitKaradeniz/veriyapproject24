@@ -6,6 +6,7 @@ class Graf:
         if sehir not in self.graf:
             self.graf[sehir] = []
     
+<<<<<<< HEAD
     def rota_ekle(self, sehir1, sehir2, mesafe):
         if sehir1 in self.graf and sehir2 in self.graf:
             self.graf[sehir1].append((sehir2, mesafe))
@@ -14,6 +15,18 @@ class Graf:
     def rota_bul(self, baslangic, varis):
         ziyaret_edilen = set()
         yigin = [(baslangic, [baslangic], 0)]
+=======
+    def add_route(self, city1, city2, distance):
+
+        if city1 not in self.graph or city2 not in self.graph:
+            raise ValueError("Her iki şehir de grafiğe eklenmiş olmalıdır.")
+        self.graph[city1].append((city2, distance))
+        self.graph[city2].append((city1, distance))
+    
+    def find_route(self, start, end):
+        if start not in self.graph or end not in self.graph:
+            raise ValueError("Hem başlangıç hem de hedef şehir grafikte bulunmalıdır.")
+>>>>>>> e6740d9019b35450c0f7e4598de79bcedb408fa6
         
         while yigin:
             (sehir, yol, toplam_mesafe) = yigin.pop()
