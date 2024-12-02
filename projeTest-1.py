@@ -9,13 +9,13 @@ class Graph:
     def add_route(self, city1, city2, distance):
 
         if city1 not in self.graph or city2 not in self.graph:
-            raise ValueError("Both cities must be added to the graph before adding a route.")
+            raise ValueError("Her iki şehir de grafiğe eklenmiş olmalıdır.")
         self.graph[city1].append((city2, distance))
         self.graph[city2].append((city1, distance))
     
     def find_route(self, start, end):
         if start not in self.graph or end not in self.graph:
-            raise ValueError("Both start and end cities must exist in the graph.")
+            raise ValueError("Hem başlangıç hem de hedef şehir grafikte bulunmalıdır.")
         
         visited = set()
         stack = [(start, [start])]
